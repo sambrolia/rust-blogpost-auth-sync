@@ -12,6 +12,7 @@ mod schema;
 
 pub type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 
+#[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     dotenv::dotenv().ok();
     std::env::set_var("RUST_LOG", "actix_web=debug");
